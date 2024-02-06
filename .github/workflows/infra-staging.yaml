@@ -3,10 +3,10 @@ name: practicalgitops.staging.infra
 on:
   push:
     branches: [ staging ]
-    paths:
-      - "infra/**"
-      - "!**/README.md"
-      - "infra-staging.yaml"
+    #paths:
+      #- "infra/**"
+      #- "!**/README.md"
+      #- "infra-staging.yaml"
   pull_request:
     branches: [ staging ]
     #paths:
@@ -14,7 +14,11 @@ on:
       #- "!**/README.md" 
       #- "infra-staging.yaml"
       
-  workflow_dispatch:
+  #workflow_dispatch:
+
+# Permission can be added at job level or workflow level
+permissions:
+  contents: write   # This is required to create/push the new git tag
   
 jobs:
   terraform:
