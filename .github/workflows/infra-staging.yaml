@@ -3,13 +3,13 @@ name: practicalgitops.staging.infra
 on:
   push:
     branches:
-        - staging
+      - staging
     paths:
       - "infra/**"
       - "!**/README.md"
   pull_request:
     branches:
-        - staging
+      - staging
     paths:
       - "infra/**"
       - "!**/README.md" 
