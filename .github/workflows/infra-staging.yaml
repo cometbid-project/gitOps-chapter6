@@ -15,6 +15,10 @@ on:
       #- "infra-staging.yaml"
       
   workflow_dispatch:
+
+# Permission can be added at job level or workflow level
+permissions:
+  contents: write   # This is required to create/push the new git tag
   
 jobs:
   terraform:
