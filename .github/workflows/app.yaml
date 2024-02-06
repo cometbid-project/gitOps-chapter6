@@ -6,12 +6,8 @@ env:
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - "app/**"
-      - "!**/README.md"
-      - "!**/LICENSE"
+    branches: [ "dev/**", "staging/**", "main/**", "prod/**" ]
+    paths: [ "app/**", "!**/README.md", "!**/LICENSE", ".github/workflows/app.yaml"]
 
 # Job declaration starts.
 jobs:
