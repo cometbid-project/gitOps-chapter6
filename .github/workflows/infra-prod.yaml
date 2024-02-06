@@ -1,4 +1,4 @@
-name: practicalgitops.staging.infra
+name: practicalgitops.prod.infra
 
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init -backend-config=staging.hcl
+        run: terraform init -backend-config=prod.hcl
       
       - name: Terraform Validate
         id: validate
@@ -58,7 +58,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const output = `## Terraform Staging Infra Plan
+            const output = `## Terraform Production Infra Plan
 
             #### Terraform Initialization \`${{ steps.init.outcome }}\`
             #### Terraform Validation \`${{ steps.validate.outcome }}\`
@@ -82,5 +82,5 @@ jobs:
         run: exit 1
   
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/staging' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply
