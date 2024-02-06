@@ -2,12 +2,12 @@ name: practicalgitops.prod.infra
 
 on:
   push:
-    branches: [ "main**", "prod**" ]
-    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-prod.yaml" ]
+    branches: [ "dev**" ]
+    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-dev.yaml" ]
   
   pull_request:
-    branches: [ "main**", "prod**" ]
-    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-prod.yaml" ]
+    branches: [ "dev**" ]
+    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-dev.yaml" ]
       
   #workflow_dispatch:
 
