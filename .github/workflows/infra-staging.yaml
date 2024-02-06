@@ -9,10 +9,10 @@ on:
       - "infra-staging.yaml"
   pull_request:
     branches: [ staging ]
-    paths:
-      - "infra/**"
-      - "!**/README.md" 
-      - "infra-staging.yaml"
+    #paths:
+      #- "infra/**"
+      #- "!**/README.md" 
+      #- "infra-staging.yaml"
       
   workflow_dispatch:
   
