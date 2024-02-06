@@ -2,7 +2,7 @@ name: practicalgitops.staging.infra
 
 on:
   push:
-    branches: [ "staging/**" ]
+    branches: [ "staging**" ]
     paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-staging.yaml" ]
   
   pull_request:
