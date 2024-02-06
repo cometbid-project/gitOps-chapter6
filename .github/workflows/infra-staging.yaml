@@ -9,10 +9,10 @@ on:
       - "infra-staging.yaml"
   pull_request:
     branches: [ staging ]
-    paths:
-      - "infra/**"
-      - "!**/README.md" 
-      - "infra-staging.yaml"
+    #paths:
+      #- "infra/**"
+      #- "!**/README.md" 
+      #- "infra-staging.yaml"
       
   workflow_dispatch:
   
@@ -34,7 +34,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.1.0
+          terraform_version: 1.7.0
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Terraform Init
