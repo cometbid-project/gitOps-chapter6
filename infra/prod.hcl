@@ -1,3 +1,3 @@
-workspaces { name = "prod-1" }
+workspaces { name = "prod " }
 hostname     = "app.terraform.io"
 organization = "The-Cometbid-Software-Foundation"
