@@ -1,4 +1,4 @@
-name: practicalgitops.prod.infra
+name: practicalgitops.dev.infra
 
 on:
   push:
