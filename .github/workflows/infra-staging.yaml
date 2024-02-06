@@ -7,12 +7,14 @@ on:
     paths:
       - "infra/**"
       - "!**/README.md"
+      - "infra-staging.yaml"
   pull_request:
     branches:
       - staging
     paths:
       - "infra/**"
       - "!**/README.md" 
+      - "infra-staging.yaml"
       
   workflow_dispatch:
   
