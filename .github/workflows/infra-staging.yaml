@@ -3,16 +3,11 @@ name: practicalgitops.staging.infra
 on:
   push:
     branches: [ staging ]
-    #paths:
-      #- "infra/**"
-      #- "!**/README.md"
-      #- "infra-staging.yaml"
+    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-staging.yaml"]
+  
   pull_request:
     branches: [ staging ]
-    #paths:
-      #- "infra/**"
-      #- "!**/README.md" 
-      #- "infra-staging.yaml"
+    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-staging.yaml"]
       
   #workflow_dispatch:
 
@@ -22,7 +17,7 @@ permissions:
   
 jobs:
   terraform:
-    name: "Terraform"
+    name: "Terraform deploy"
     runs-on: ubuntu-latest
     defaults:
       run:  
