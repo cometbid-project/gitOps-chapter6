@@ -14,7 +14,7 @@ on:
       #- "!**/README.md" 
       #- "infra-staging.yaml"
       
-  workflow_dispatch:
+  #workflow_dispatch:
 
 # Permission can be added at job level or workflow level
 permissions:
