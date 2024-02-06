@@ -1,13 +1,13 @@
-name: practicalgitops.prod.infra
+name: practicalgitops.feature.infra
 
 on:
   push:
-    branches: [ "main**", "prod**" ]
-    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-prod.yaml" ]
+    branches: [ "feature**" ]
+    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-feature.yaml" ]
   
   pull_request:
-    branches: [ "main**", "prod**" ]
-    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-prod.yaml" ]
+    branches: [ "feature**" ]
+    paths: [ "infra/**", "!**/README.md", ".github/workflows/infra-feature.yaml" ]
       
   #workflow_dispatch:
 
@@ -38,7 +38,7 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init -backend-config=prod.hcl
+        run: terraform init -backend-config=dev.hcl
       
       - name: Terraform Validate
         id: validate
@@ -58,7 +58,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const output = `## Terraform Production Infra Plan
+            const output = `## Terraform feature Infra Plan
 
             #### Terraform Initialization \`${{ steps.init.outcome }}\`
             #### Terraform Validation \`${{ steps.validate.outcome }}\`
